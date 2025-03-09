@@ -1,0 +1,39 @@
+/* 
+
+seletores
+
+*                | seletor que seleciona todos os elementos 
+nome-da-tag      | seleciona uma tag
+.nome-da-classe  | seleciona por classe
+#                | seleciona por id
+
+body div section | seleção por dependentes
+body, h1         | seleção multipla
+
+.pai > .filha    | seleção por descendente
+.pai > h1+p      | seleção de adjacente siblings selector
+.pai .um~.dois   | seleção geral siblings selector
+
+[atributo]       | seleção por atributo
+[atributo~="a"]  | seleção por atributo que tem dentro de um atributo
+[atributo^="a"]  | seleção por atributo que começa com
+[atributo$="a"]  | seleção por atributo que termina com
+[atributo*="a"]  | seleção por atributo que contém
+
+
+Pseudo Classes - estados
+
+classe:hover       | Passar o mouse por cima
+classe:link        | links nunca visitados
+classe:visited     | links visitados
+classe:active      | clickado
+input:required     | input com atributo required
+input:focus        | input em foco
+input:disabled     | input com atributo desabititado
+input:enabled      | input com atributo padrão
+input:checked      | input com atributo marcado
+classe:first-child | seleciona o primeiro elemento de um pai
+classe:last-child  | seleciona o primeiro elemento de um pai
+
+*/
+

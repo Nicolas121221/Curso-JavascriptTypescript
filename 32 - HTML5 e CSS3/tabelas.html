@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 100dvw;
+        }
+        table td, table th{
+            border: 0.1px solid black;
+            padding: 5px;
+            margin: 0px;
+            text-align: center;
+        }
+        table caption{
+            caption-side: top;
+            text-align: center;
+            margin: 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>descrição vai aqui</caption>
+        <thead>
+            <tr>
+                <th>coluna 1</th>
+                <th>coluna 2</th>
+                <th>coluna 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">colspan mescla</td>
+                <td>3</td>
+            </tr>
+            <tr>
+
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td>total</td>
+                    <td>3</td>
+                    <td>tfoot faz isso</td>
+                </tr>
+            </tfoot>
+        </tbody>
+
+    </table>
+</body>
+</html>
