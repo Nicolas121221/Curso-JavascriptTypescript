@@ -1,5 +1,45 @@
-# Curso Javascript/Typescript Luiz Otávio Miranda
- Atividade do curso da  udemy do Luiz Otávio Miranda | Javascript e TypeScript - front-end e back-end (Full Stack) - Node, Express, noSQL, React, hooks, Redux, Design Patterns
+# 📌 Repositório de Exercícios - JavaScript e TypeScript
 
-## Objetivo
- Este é um repositório privado, ele tem o intuito de armazenar os contéudos e os exércícios das aulas de javascript e typescript do Luiz Otávio Miranda(Udemy).
+## 📖 Sobre o Repositório
+Este repositório privado contém minha resolução dos exercícios do curso **JavaScript e TypeScript** ministrado por **Luiz Otávio Miranda** na Udemy. O objetivo é consolidar e aprimorar meus conhecimentos na linguagem, explorando desde conceitos fundamentais até tópicos mais avançados.
+
+## 🎯 Objetivos
+- Praticar **JavaScript Moderno** (ES6+);
+- Aprimorar o entendimento de **TypeScript**;
+- Explorar paradigmas como **programação funcional e orientação a objetos**;
+- Desenvolver **boas práticas** de código e organização;
+- Criar uma base sólida para projetos futuros.
+
+## 📂 Estrutura do Repositório
+A organização do repositório segue a estrutura modular do curso:
+
+```
+📦 exercicios-js-ts
+ ┣ 📂 fundamentos
+ ┣ 📂 arrays-e-objetos
+ ┣ 📂 funcoes
+ ┣ 📂 assincrono-e-promises
+ ┣ 📂 poo
+ ┣ 📂 typescript
+ ┗ 📜 README.md
+```
+
+- **fundamentos/** → Conceitos básicos da linguagem, variáveis, operadores e estrutura de controle.
+- **arrays-e-objetos/** → Manipulação de coleções e estruturas de dados complexas.
+- **funcoes/** → Abordagem de funções, escopo, closures e callbacks.
+- **assincrono-e-promises/** → Trabalhando com assincronismo, Promises, async/await.
+- **poo/** → Aplicação de Programação Orientada a Objetos em JavaScript e TypeScript.
+- **typescript/** → Tipagem, interfaces, classes e boas práticas no TypeScript.
+
+## 🛠️ Tecnologias Utilizadas
+- **JavaScript (ES6+)**
+- **TypeScript**
+- **Node.js** (para execução de scripts e testes)
+- **VS Code** (ambiente de desenvolvimento)
+
+## 🚀 Próximos Passos
+À medida que avanço no curso, novas pastas e exercícios serão adicionados para documentar minha evolução e aprendizado contínuo.
+
+---
+
+📌 *Este repositório é privado e de uso pessoal para fins de estudo e prática.*
