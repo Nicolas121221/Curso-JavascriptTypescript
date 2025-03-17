@@ -11,16 +11,14 @@ Este repositório privado contém minha resolução dos exercícios do curso **J
 - Criar uma base sólida para projetos futuros.
 
 ## 📂 Estrutura do Repositório
-A organização do repositório segue a estrutura modular do curso:
+A organização do repositório segue a estrutura do curso:
 
 ```
 📦 exercicios-js-ts
- ┣ 📂 fundamentos
- ┣ 📂 arrays-e-objetos
- ┣ 📂 funcoes
- ┣ 📂 assincrono-e-promises
- ┣ 📂 poo
- ┣ 📂 typescript
+ ┣ 📂 01 - Introdução
+ ┣ 📂 02 - Lógica de Programação
+ ┣ 📂 32 - Html5 CSS3
+ ┣ 📂 50 - modelo para exercícios
  ┗ 📜 README.md
 ```
 
