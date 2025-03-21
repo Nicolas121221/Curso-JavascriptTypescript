@@ -5,27 +5,35 @@ const zerar = document.querySelector('.zerar');
 
 let [hrs, min, seg] = [0, 0, 0]
 
-function avaliarHora(hrs, min, seg){
-    if (seg > 59) [seg, min] = [0, min++]
-    if (min > 59) [min, seg] = [0, hrs++]
-    if (hrs > 23) [seg, hrs, min] = [0, 0, 0]
-    return `${hrs}:${min}:${seg}`
+function avaliarHora(hrs, min, seg) {
+    return `${adicionarZero(hrs)}:${adicionarZero(min)}:${adicionarZero(seg)}`
 }
 
-function timer(hrs, min, seg) {
+function adicionarZero(num) {
+    if (num < 10) return `0${num}`;
+    return num;
+}
+
+function iniciarTempo(hrs,min,seg) {
     setInterval(() => {
         seg++
+        if (seg > 59) [seg, min] = [0, min += 1]
+        if (min > 59) [min, hrs] = [0, hrs += 1]
+        if (hrs > 23) [seg, hrs, min] = [0, 0, 0]
         relogio.innerHTML = avaliarHora(hrs, min, seg)
-    }, 200)
+    }, 1000)
+
 }
 
 iniciar.addEventListener('click', (evento) => {
-    timer(hrs, min, seg)
+    iniciarTempo(hrs, min, seg)
 })
 pausar.addEventListener('click', (evento) => {
-    alert('botão clickado')
+    clearInterval(iniciarTempo)
 })
 zerar.addEventListener('click', (evento) => {
-    alert('botão clickado')
+    clearInterval(iniciarTempo)
+    [hrs, min, seg] = [0, 0, 0]
+    iniciarTempo()
 })
 
