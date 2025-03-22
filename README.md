@@ -9,6 +9,7 @@ Este repositório privado contém minha resolução dos exercícios do curso **J
 - Explorar paradigmas como **programação funcional e orientação a objetos**;
 - Desenvolver **boas práticas** de código e organização;
 - Criar uma base sólida para projetos futuros.
+- Aprender a utilizar diferentes tipos de framework e trabalhar com projetos práticos
 
 ## 📂 Estrutura do Repositório
 A organização do repositório segue a estrutura do curso:
@@ -17,7 +18,7 @@ A organização do repositório segue a estrutura do curso:
 📦 exercicios-js-ts
  ┣ 📂 01 - Introdução
  ┣ 📂 02 - Lógica de Programação
- ┣ 📂 32 - Html5 CSS3
+ ┣ 📂 32 - Html5 e CSS3
  ┣ 📂 50 - modelo para exercícios
  ┗ 📜 README.md
 ```
@@ -34,6 +35,11 @@ A organização do repositório segue a estrutura do curso:
 - **TypeScript**
 - **Node.js** (para execução de scripts e testes)
 - **VS Code** (ambiente de desenvolvimento)
+- **Maria DB e Mysql**
+- **Google Cloud**
+- **Html5 e Css3**
+- **Next JS**
+- **React**
 
 ## 🚀 Próximos Passos
 À medida que avanço no curso, novas pastas e exercícios serão adicionados para documentar minha evolução e aprendizado contínuo.
