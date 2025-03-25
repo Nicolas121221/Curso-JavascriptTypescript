@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        .filha1,
+        .filha2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 0, 0, 0.392);
+            margin: 10px;
+            position: static;
+        }
+
+        .filha2 {
+            background-color: yellow;
+        }
+
+        .filha1 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>posicionamento com Position</h1>
+    <ul>
+        <li>static - padrão</li>
+        <li>absolute - em relação a página</li>
+        <li>relativo - em relação ao outro elemento</li>
+        <li>fixed - fixa na página </li>
+        <li>sticky - prende a página quando se scrolla pra ele </li>
+        <li>z-index - ajusta em relção a camada </li>
+    </ul>
+    <div class="pai">
+        <div class="filha1"></div>
+        <div class="filha2"></div>
+    </div>
+
+</body>
+
+</html>
