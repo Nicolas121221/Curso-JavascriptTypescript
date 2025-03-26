@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.grid {
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+    padding-top: 73px;
+}
+
+.grid:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.grid .col {
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    background: red;
+    box-shadow: 0 0 0 0 blue;
+}
+
+.menu {
+    width: 100%;
+    position: fixed;
+    background-color: black;
+}
+
+.menu ul {
+    list-style: none;
+    display: block;
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.menu ul li {
+    float: left;
+}
+
+.menu ul li a {
+    display: block;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover {
+    background: #333;
+}
+
+
+@media all and (max-width:569px) {
+    .grid .col {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 570px) and (max-width:769px) {
+    .grid .col {
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 770px) and (max-width:1199px) {
+    .grid .col {
+        width: 33.33%;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .grid .col {
+        width: 25%;
+    }
+}
+
+.full-page {
+    max-width: 100%;
+    padding-top: 73px;
+    height: 100vh;
+}
+
+.full-page-content{
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
