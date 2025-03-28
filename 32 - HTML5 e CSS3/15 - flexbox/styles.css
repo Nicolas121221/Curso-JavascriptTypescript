@@ -6,10 +6,26 @@
 
 .flex-container{
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     flex-direction: row;
+    align-items: flex-start;
     background: yellow;
+    height: 800px;
 }
 
 .flex-item{
+    width: 33.33%;
+    color: white;
     background: red;
 }
+
+/*
+flex grow - como o elemento vai utilizar do espaço não ocupado
+flex bassis - como vai ser o padrão do elemento
+flex shrink - se o elemento vai encolher
+flex - junção de todos
+
+flex-flow - junção do flex direction com o wrap
+order - ajusta de acordo com o endereço do elemnto
+*/
