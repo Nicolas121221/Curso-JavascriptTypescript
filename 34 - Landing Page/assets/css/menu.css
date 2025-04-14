@@ -36,6 +36,7 @@
   font-size: 1.8rem;
   color: var(--primary-color);
   position: relative;
+  text-align: center;
 }
 .menu ul li a::after {
   content: "";
