@@ -22,7 +22,9 @@ A organização do repositório segue a estrutura do curso:
  ┣ 📂 01 - Introdução
  ┣ 📂 02 - Lógica de Programação
  ┣ 📂 03 - Funções
- ┣ 📂 32 - Html5 e CSS3
+ ┣ 📂 04 - Arrays
+ ┣ 📂 33 - Html5 e CSS3
+ ┣ 📂 34 - Landing Page
  ┣ 📂 50 - modelo para exercícios
  ┗ 📜 README.md
 ```
