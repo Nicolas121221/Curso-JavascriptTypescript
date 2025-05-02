@@ -12,13 +12,24 @@
 function Pessoa(nome, sobrenome) {
     this.nome = nome;
     this.sobrenome = sobrenome;
-    this.nomeCompleto = () => `${this.nome} ${this.sobrenome}`;
+
+}
+
+// Pessoa.prototype === pessoa1.__proto__
+
+Pessoa.prototype.nomeCompleto = function(){
+    return `${this.nome} ${this.sobrenome}`;
 }
 
 // * instância
-const pessoa1 = new Pessoa('Nícolas', 'G.'); // <-Pessoa = função construtora
-const pessoa2 = new Pessoa('María', 'A.'); // <-Pessoa = função construtora
+const pessoa1 = new Pessoa('Nícolas', 'G.'); // <-- Pessoa = função construtora
+const pessoa2 = new Pessoa('maria', 'A.'); // <-- Pessoa = função construtora
+const data = new Date(); // <-- Data = função construtora
+
+
 
 console.dir(pessoa1)
-console.dir(pessoa2)
+console.dir(data)
+
+
 
