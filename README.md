@@ -25,6 +25,7 @@ A organização do repositório segue a estrutura do curso:
  ┣ 📂 04 - Arrays
  ┣ 📂 05 - Objetos e Prototypes
  ┣ 📂 06 - Classes
+ ┣ 📂 07 - Javascript Assíncrono
  ┣ 📂 33 - Html5 e CSS3
  ┣ 📂 34 - Landing Page
  ┣ 📂 50 - modelo para exercícios
