@@ -22,7 +22,8 @@ module.exports = {
             use: {
                 loader: "babel-loader",
                 options: {
-                    presets: ["@babel/env"]
+                    presets: ["@babel/preset-env"],
+                    sourceType: "module"
                 }
             }
         }]
@@ -32,8 +33,24 @@ module.exports = {
 
 # Cria a pasta public a adiciona o arquivo assets
 New-Item -Path . -Name "public" -ItemType "directory"
-New-Item -Path .\public -Name "assets" -ItemType "directory"
 New-Item -Path .\public\assets -Name "js" -ItemType "directory"
+New-Item -Path .\public -Name "assets" -ItemType "directory"
+
+New-Item -Path .\public -Name "index.html" -ItemType "File"
+Add-Content -Path .\public\index.html -Value '<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="./assets/js/bundle.js"></script>
+</body>
+</html>
+'
+
 
 # Cria a pasta src a adiciona o arquivo index.js
 New-Item -Path . -Name "src" -ItemType "directory"
@@ -41,7 +58,7 @@ New-Item -Path .\src -Name "index.js" -ItemType "File"
 
 # Configura o script para iniciar o webpack no package.json
 $json = Get-Content package.json -Raw | ConvertFrom-Json
-$json.scripts = @{ "carregaWebpack" = "webpack --watch" }
+$json.scripts = @{ "dev" = "webpack --watch" }
 $json | ConvertTo-Json -Depth 10 | Set-Content package.json
 
 # Inicia o webpack
