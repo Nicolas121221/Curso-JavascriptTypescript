@@ -18,7 +18,7 @@ Este repositório privado contém minha resolução dos exercícios do curso **J
 A organização do repositório segue a estrutura do curso:
 
 ```text
-📦 exercicios-js-ts
+📦 Curso-JavascriptTypescript
  ┣ 📂 01 - Introdução
  ┣ 📂 02 - Lógica de Programação
  ┣ 📂 03 - Funções
@@ -26,6 +26,8 @@ A organização do repositório segue a estrutura do curso:
  ┣ 📂 05 - Objetos e Prototypes
  ┣ 📂 06 - Classes
  ┣ 📂 07 - Javascript Assíncrono
+ ┣ 📂 08 - Javascript Tooling e ES6 Modules
+ ┣ 📂 09 - Node,Npm e Express
  ┣ 📂 33 - Html5 e CSS3
  ┣ 📂 34 - Landing Page
  ┣ 📂 50 - modelo para exercícios
