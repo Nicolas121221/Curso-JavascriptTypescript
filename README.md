@@ -28,6 +28,7 @@ A organização do repositório segue a estrutura do curso:
  ┣ 📂 07 - Javascript Assíncrono
  ┣ 📂 08 - Javascript Tooling e ES6 Modules
  ┣ 📂 09 - Node,Npm e Express
+ ┣ 📂 10 - Projeto Agenda
  ┣ 📂 33 - Html5 e CSS3
  ┣ 📂 34 - Landing Page
  ┣ 📂 50 - modelo para exercícios
