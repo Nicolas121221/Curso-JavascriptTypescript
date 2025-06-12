@@ -7,18 +7,21 @@
       <h1 class="text-center">Agenda</h1>
       <p class="text-center lead">seus contatos estão abaixo</p>
 
-      <%- include('includes/messages')  %>
+      <%- include('includes/messages') %>
 
       <div class="row">
-
         <div class="responsive-table">
           <table class="table my-3">
+            <% contatos.forEach((contato)=>{ %>
             <tr>
-              <td>Nícolas</td>
-              <td>Guedes</td>
-              <td>+55 47 99999-9999</td>
-              <td>nicolasguedes@email.com</td>
+              <td><%= contato.nome %></td>
+              <td><%= contato.sobrenome %></td>
+              <td><%= contato.telefone %></td>
+              <td><%= contato.email %></td>
+              <td><a href="/contato/<%= contato.id  %>">Editar</a></td>
+              <td><a class="text-danger" href="/contato/delete/<%= contato.id  %>">Excluir</a></td>
             </tr>
+            <% }) %>
           </table>
         </div>
       </div>

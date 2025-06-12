@@ -41,6 +41,10 @@ class Contato {
         const contato = await ContatoModel.findById(id);
         return contato
     };
+    static async buscaContatos() {
+        const contatos = await ContatoModel.find().sort({criadorEm: -1});
+        return contatos
+    };
 
     async edit(id) {
         if (typeof id !== 'string') return;

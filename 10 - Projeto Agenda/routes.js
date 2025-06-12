@@ -17,5 +17,6 @@ router.get('/contato', loginRequired ,contatoController.index)
 router.post('/contato/register', loginRequired ,contatoController.register)
 router.get('/contato/:id', loginRequired ,contatoController.editIndex)
 router.post('/contato/edit/:id', loginRequired ,contatoController.edit)
+router.get('/contato/delete/:id', loginRequired ,contatoController.delete)
 
 module.exports = router;
