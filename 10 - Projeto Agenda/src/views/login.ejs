@@ -18,7 +18,7 @@
           </p>
 
 
-          <form action="/login/register" method="post">
+          <form class="form-login" action="/login/register" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="mb-3">
               <label>Seu email</label>
@@ -37,7 +37,7 @@
         <div class="col-lg">
           <h4>Entrar no sistema</h4>
           <p>Se você já tem uma conta, faça o login abaixo:</p>
-          <form action="/login/login" method="post">
+          <form class="form-cadastro" action="/login/login" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="mb-3">
               <label>Seu email</label>
