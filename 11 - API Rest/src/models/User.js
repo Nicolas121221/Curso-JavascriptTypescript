@@ -42,16 +42,16 @@ export default class User extends Model {
       },
     }, {
       sequelize,
-      tableName: 'user',
-      timestamps: true,
+      tableName: 'users',
       underscored: true
     });
 
-    this.addHook('beforeSave',async user =>{
-      user.password_hash = await bcryptjs.hash(user.password, 8);
+    this.addHook('beforeSave', async user => {
+      if(user.password){
+        user.password_hash = await bcryptjs.hash(user.password, 8);
+      }
     });
 
     return this;
   }
-
 }

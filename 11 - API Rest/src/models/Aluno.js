@@ -12,7 +12,6 @@ export default class Aluno extends Model {
     }, {
       sequelize,
       tableName: 'alunos',
-      timestamps: true,
       underscored: true
     });
 
