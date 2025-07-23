@@ -5,9 +5,29 @@ class UserController {
   // * index
   async index(req, res) {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({attributes: ['id', 'nome', 'email']});
 
       return res.json(users);
+    } catch (e) {
+      return res.json(null)
+    }
+  }
+
+  // * show
+  async show(req, res) {
+    try {
+      const reqId = req.params.id;
+      if (!reqId) {
+        return res.status(400).json({
+          errors: ['ID param is missing!']
+        });
+      }
+
+      const user = await User.findByPk(reqId);
+
+      const {id, nome, email} = user;
+
+      return res.json({id, nome, email});
     } catch (e) {
       return res.json(null)
     }
@@ -18,7 +38,9 @@ class UserController {
     try {
       const novoUser = await User.create(req.body)
 
-      return res.json(novoUser);
+      const {id, nome , email} = novoUser;
+
+      return res.json({id, nome , email});
     } catch (e) {
       console.log(e)
       return res.status(400).json({
@@ -27,34 +49,18 @@ class UserController {
     }
   }
 
-  // * show
-  async show(req, res) {
-    try {
-      const id = req.params.id;
-      if (!id) {
-        return res.status(400).json({
-          errors: ['ID param is missing!']
-        });
-      }
-
-      const user = await User.findByPk(id);
-      return res.json(user);
-    } catch (e) {
-      return res.json(null)
-    }
-  }
 
   // * update
   async update(req, res) {
     try {
-      const id = req.params.id;
-      if (!id) {
+      const userId = req.userId;
+      if (!userId) {
         return res.status(400).json({
           errors: ['ID param is missing!']
         });
       }
 
-      const user = await User.findByPk(id);
+      const user = await User.findByPk(userId);
       if (!user) {
         return res.status(400).json({
           errors: ["user doesn't exist"]
@@ -63,7 +69,9 @@ class UserController {
 
       const novosDados = await user.update(req.body)
 
-      return res.json(novosDados);
+      const {id, nome, email} = novosDados;
+
+      return res.json({id, nome, email});
     } catch (e) {
       console.log(e)
       return res.json(null)
@@ -73,7 +81,7 @@ class UserController {
   // * delete
   async delete(req, res) {
     try {
-      const id = req.params.id;
+      const id = req.userId;
       if (!id) {
         return res.status(400).json({
           errors: ['ID param is missing!']
@@ -89,7 +97,7 @@ class UserController {
 
       await user.destroy()
 
-      return res.json(user);
+      return res.json(null);
     } catch (e) {
       console.log(e)
       return res.json(null)
