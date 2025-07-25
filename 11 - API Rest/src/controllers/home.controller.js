@@ -1,6 +1,6 @@
 class HomeController{
   async index(req,res) {
-    res.json('API funcionando')
+    res.json('API running')
   }
 }
 
