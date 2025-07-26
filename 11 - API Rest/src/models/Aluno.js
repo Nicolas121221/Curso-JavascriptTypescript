@@ -5,7 +5,7 @@ export default class Aluno extends Model {
     super.init({
       nome: {
         type: Sequelize.STRING,
-        dafaultValue: '',
+        defaultValue: '',
         validate: {
           len: {
             args: [3, 255],
@@ -15,7 +15,7 @@ export default class Aluno extends Model {
       },
       sobrenome: {
         type: Sequelize.STRING,
-        dafaultValue: '',
+        defaultValue: '',
         validate: {
           len: {
             args: [3, 255],
@@ -25,7 +25,7 @@ export default class Aluno extends Model {
       },
       email: {
         type: Sequelize.STRING,
-        dafaultValue: '',
+        defaultValue: '',
         validate: {
           isEmail: {
             msg: 'E-mail inválido'
@@ -68,4 +68,7 @@ export default class Aluno extends Model {
     return this;
   }
 
+  static associate(models) {
+    this.hasMany(models.Foto, { foreignKey: 'aluno_id' })
+  }
 }

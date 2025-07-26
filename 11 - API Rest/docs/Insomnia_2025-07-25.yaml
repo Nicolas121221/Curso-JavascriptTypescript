@@ -1,0 +1,456 @@
+type: collection.insomnia.rest/5.0
+name: API
+meta:
+  id: wrk_4a25dfda045f41bebad1a7afad1dbf41
+  created: 1753290850396
+  modified: 1753290850396
+  description: ""
+collection:
+  - name: Tokens
+    meta:
+      id: fld_58ef28a4303d4d84b6811ed39e18ed42
+      created: 1753290961447
+      modified: 1753403877326
+      sortKey: -1753290961447
+      description: ""
+    children:
+      - url: "{{ _.url }}/tokens/"
+        name: Store
+        meta:
+          id: req_b02ec572bf3043fabb4cb7b0d3533740
+          created: 1753290994891
+          modified: 1753496396029
+          isPrivate: false
+          description: ""
+          sortKey: -1753290994891
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"nicolas@email.com",
+            	"password":"123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Users
+    meta:
+      id: fld_2bd49823bcce40bd81704fcf66bd3a7a
+      created: 1753291091515
+      modified: 1753298002182
+      sortKey: -1753291091515
+      description: ""
+    children:
+      - url: "{{ _.url }}/users/"
+        name: Index
+        meta:
+          id: req_e4ed478bbbb0475ea0e61e92da4f18da
+          created: 1753291095581
+          modified: 1753407799895
+          isPrivate: false
+          description: ""
+          sortKey: -1753291095581
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/users/:id"
+        name: Show
+        meta:
+          id: req_c35d9faeb5e8427498cde576a8eec28f
+          created: 1753291125385
+          modified: 1753407804165
+          isPrivate: false
+          description: ""
+          sortKey: -1753291095481
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "6"
+      - url: "{{ _.url }}/users/"
+        name: Store
+        meta:
+          id: req_d88595631ac247c29538fd0fba4f5c7e
+          created: 1753291150335
+          modified: 1753496292970
+          isPrivate: false
+          description: ""
+          sortKey: -1753291095381
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Nicolas",
+            	"email": "nicolas@email.com",
+            	"password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/users/"
+        name: Update
+        meta:
+          id: req_e562e645ce0f4b7eb8dee0f8fd5147fb
+          created: 1753291350244
+          modified: 1753407811226
+          isPrivate: false
+          description: ""
+          sortKey: -1753291095281
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "maria editada1",
+            	"email": "maria1@email.com",
+            	"password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/users/"
+        name: Delete
+        meta:
+          id: req_69dc0ffd58d44adea3250e197702bded
+          created: 1753291387936
+          modified: 1753407815031
+          isPrivate: false
+          description: ""
+          sortKey: -1753291095181
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Home
+    meta:
+      id: fld_278e56f6c724471daa69e3ffc2aee491
+      created: 1753291187275
+      modified: 1753403540344
+      sortKey: -1753291187275
+      description: ""
+    children:
+      - url: "{{ _.url }}/"
+        name: Index
+        meta:
+          id: req_bfcf74ed2ae74b259e476807cd0b0696
+          created: 1753291195225
+          modified: 1753407705690
+          isPrivate: false
+          description: ""
+          sortKey: -1753291195225
+        method: GET
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Nícolas",
+            	"email": "nicolas@email.com",
+            	"password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Aluno
+    meta:
+      id: fld_934f02de4e594bd2902bb5e0ac50cdff
+      created: 1753297963876
+      modified: 1753404767890
+      sortKey: -1753291026481
+      description: ""
+    children:
+      - url: "{{ _.url }}/alunos/"
+        name: Index
+        meta:
+          id: req_4180c584da5b42629d585679249af5f0
+          created: 1753298044881
+          modified: 1753407751312
+          isPrivate: false
+          description: ""
+          sortKey: -1753298044881
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/alunos/:id"
+        name: Show
+        meta:
+          id: req_4c0b3e3a7dc643ae8052a2192c741a58
+          created: 1753403256574
+          modified: 1753496180173
+          isPrivate: false
+          description: ""
+          sortKey: -1753298044781
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "2"
+      - url: "{{ _.url }}/alunos"
+        name: Store
+        meta:
+          id: req_a80614165cf34e57906cd9a0b4630da0
+          created: 1753403292553
+          modified: 1753407821452
+          isPrivate: false
+          description: ""
+          sortKey: -1753298044681
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "nicolas",
+            	"sobrenome": "121221",
+            	"email": "nicolas-dev@email.com",
+            	"idade": 18,
+            	"peso": 70,
+            	"altura": 1.7
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.url }}/alunos/:id"
+        name: Update
+        meta:
+          id: req_d032e0830a70489ebceefd7018a57750
+          created: 1753403448538
+          modified: 1753407825948
+          isPrivate: false
+          description: ""
+          sortKey: -1753298044581
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "nicolas",
+            	"sobrenome": "121221",
+            	"email": "nicolas-dev123@email.com",
+            	"idade": 18,
+            	"peso": 70,
+            	"altura": 1.7
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "4"
+      - url: "{{ _.url }}/alunos/:id"
+        name: Delete
+        meta:
+          id: req_d7730a0e84124613b9cacb2fcadccfa9
+          created: 1753403527832
+          modified: 1753407831988
+          isPrivate: false
+          description: ""
+          sortKey: -1753298044481
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.2.0
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+        pathParameters:
+          - name: id
+            value: "1"
+  - name: Fotos
+    meta:
+      id: fld_7ebf452f60f0425199e6f56d421dc7af
+      created: 1753404758211
+      modified: 1753404771474
+      sortKey: -1753290993964
+      description: ""
+    children:
+      - url: "{{ _.url }}/fotos/"
+        name: Store
+        meta:
+          id: req_9a5217ee49af45118e01e8af31032262
+          created: 1753404778595
+          modified: 1753495336772
+          isPrivate: false
+          description: ""
+          sortKey: -1753404778595
+        method: POST
+        body:
+          mimeType: multipart/form-data
+          params:
+            - id: pair_61918af07f4841008131ce28952fef05
+              name: file
+              value: ""
+              description: ""
+              disabled: false
+              type: file
+              fileName: C:\Users\Usuario\Downloads\Captura de tela 2025-06-10 180857.png
+            - id: pair_aa574b43ea6649759a2b66c99ac57a67
+              name: aluno_id
+              value: "2"
+              description: ""
+              disabled: false
+              type: text
+              multiline: false
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.2.0
+            id: pair_2337bc3886f44c678d9c09f81753f3e4
+        authentication:
+          type: bearer
+          token: "{{ _.token }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c33bc81814f636c3a03fa657ec989add808d19b1
+    created: 1753290850409
+    modified: 1753290850409
+environments:
+  name: Base Environment
+  meta:
+    id: env_c33bc81814f636c3a03fa657ec989add808d19b1
+    created: 1753290850408
+    modified: 1753290850408
+    isPrivate: false
