@@ -15,7 +15,6 @@ class FotoController {
         })
       }
 
-
       try {
         const { aluno_id } = req.body;
         const { originalname, filename } = req.file;
