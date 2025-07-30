@@ -30,6 +30,8 @@ A organização do repositório segue a estrutura do curso:
  ┣ 📂 09 - Node,Npm e Express
  ┣ 📂 10 - Projeto Agenda
  ┣ 📂 11 - API rest
+ ┣ 📂 12 - React
+ ┣ 📂 13 - Redux
  ┣ 📂 33 - Html5 e CSS3
  ┣ 📂 34 - Landing Page
  ┣ 📂 50 - modelo para exercícios
