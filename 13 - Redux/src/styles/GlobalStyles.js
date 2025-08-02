@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import * as colors from '../config/Colors.js';
+import * as colors from '../config/colors.js';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
@@ -26,8 +26,15 @@ export default createGlobalStyle`
         color: #fff;
         padding: 10px 20px;
         border-radius: 4px;
-        font-weight: 700
+        font-weight: 700;
+        transition: all 300ms;
+
+        &:hover {
+        filter: brightness(85%)
+        }
     }
+
+
 
     a{
         text-decoration:none;
