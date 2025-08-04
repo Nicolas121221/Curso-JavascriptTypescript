@@ -25,6 +25,13 @@ const alfabeto =
 
 const html = "<p>Olá mundo</p> <p>Olá de novo</p>  <div>Sou uma div</div>";
 
+const html2 = `<p 
+data-teste='teste' 
+class="teste teste">
+  Olá mundo
+</p> <p>Olá mundo</p> <div>Sou a div</div>`;
+
+
 const cpfs = `
 Os CPFs são:
   254.224.877-45 215.978.456-12 047.258.369-96 
@@ -35,6 +42,12 @@ Os CPFs são:
   963.987.32a.00 (NÃO VÁLIDO)
   963.987.32-00 (NÃO VÁLIDO)
 `;
+
+
+const cpfs2 = `254.224.877-45
+215.978.456-12
+047.258.369-96
+963.987.32a.00`;
 
 const ips = `
 
@@ -52,11 +65,23 @@ Os Ips são:
 
 `;
 
+const lookahead = `
+ONLINE  192.168.0.1 ABCDEF inactive
+OFFLINE  192.168.0.2 ABCDEF active
+ONLINE  192.168.0.3 ABCDEF active
+ONLINE  192.168.0.4 ABCDEF active
+OFFLINE  192.168.0.5 ABCDEF active
+OFFLINE  192.168.0.6 ABCDEF inactive
+`;
+
 module.exports = {
   texto,
   arquivos,
   html,
+  html2,
   alfabeto,
   cpfs,
+  cpfs2,
   ips,
+  lookahead
 };
