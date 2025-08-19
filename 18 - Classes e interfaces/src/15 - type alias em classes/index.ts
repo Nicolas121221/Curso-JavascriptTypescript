@@ -22,7 +22,7 @@ type TipoNomeCompleto = {
 	nomeCompleto: () => string;
 };
 
-class Pessoa1 implements TipoPessoa {
+export class Pessoa1 implements TipoPessoa {
 	constructor(public nome: string, public sobrenome: string) {}
 
 	nomeCompleto(): string {
@@ -30,7 +30,7 @@ class Pessoa1 implements TipoPessoa {
 	}
 }
 
-class Pessoa2 implements TipoNome, TipoSobrenome, TipoNomeCompleto {
+export class Pessoa2 implements TipoNome, TipoSobrenome, TipoNomeCompleto {
 	constructor(public nome: string, public sobrenome: string) {}
 
 	nomeCompleto(): string {
@@ -38,8 +38,8 @@ class Pessoa2 implements TipoNome, TipoSobrenome, TipoNomeCompleto {
 	}
 }
 
-const pessoa1 = new Pessoa1("Nìcolas", "Guedes");
-const pessoa2 = new Pessoa2("Nìcolas", "Guedes");
+const pessoa1 = new Pessoa1("Nícolas", "Guedes");
+const pessoa2 = new Pessoa2("Nícolas", "Guedes");
 
 console.log(pessoa1.nomeCompleto());
 console.log(pessoa2.nomeCompleto());

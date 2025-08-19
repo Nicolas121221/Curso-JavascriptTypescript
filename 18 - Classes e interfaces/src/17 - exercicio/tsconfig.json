@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+        "types": ["lodash"],
+		"allowSyntheticDefaultImports": true,
+		"noImplicitAny": true,
+		"module": "es6",
+		"target": "es5",
+		"allowJs": true,
+        "rootDir": "./src"
+	},
+	"files": ["src/webpack/index.ts"]
+}
