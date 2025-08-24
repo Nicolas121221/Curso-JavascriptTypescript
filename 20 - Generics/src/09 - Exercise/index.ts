@@ -1,40 +1,40 @@
-type ElectionOption = {
+type VotingOption = {
 	votes: number;
 	option: string;
 };
 
-export class Election {
-	private _electionOptions: ElectionOption[] = [];
+export class Voting {
+	private _votingOptions: VotingOption[] = [];
 	constructor(public title: string) {}
 
-	addElectionOption(electionOption: ElectionOption): void {
-		this._electionOptions.push(electionOption);
+	addVotingOption(votingOption: VotingOption): void {
+		this._votingOptions.push(votingOption);
 	}
 
-	vote(electionIndex: number): void {
-		if (!this._electionOptions[electionIndex]) return;
-		this._electionOptions[electionIndex].votes += 1;
+	vote(votingIndex: number): void {
+		if (!this._votingOptions[votingIndex]) return;
+		this._votingOptions[votingIndex].votes += 1;
 	}
 
-	get electionOption(): ElectionOption[] {
-		return this._electionOptions;
+	get votingOption(): VotingOption[] {
+		return this._votingOptions;
 	}
 }
 
-export class ElectionApp {
-	private votations: Votation[] = [];
+export class VotingApp {
+	private votingSessions: Voting[] = [];
 
-	addVotation(votation: Votation): void {
-		this.votations.push(votation);
+	addVotingSection(voting: Voting): void {
+		this.votingSessions.push(voting);
 	}
 
-	showVotations(): void {
-		for (const votation of this.votations) {
-			console.log(votation.title);
+	showVotingSessions(): void {
+		for (const voting of this.votingSessions) {
+			console.log(voting.title);
 
-			for (const votationOption of votation.votationOption) {
+			for (const votingOption of voting.votingOption) {
 				console.log(
-					` ${votationOption.votes} | ${votationOption.option}`,
+					` ${votingOption.votes} | ${votingOption.option}`,
 				);
 			}
 
@@ -43,37 +43,37 @@ export class ElectionApp {
 	}
 }
 
-const votation1 = new Votation("What is your favorite programming language? ");
-votation1.addVotationOption({ votes: 0, option: "Python" });
-votation1.addVotationOption({ votes: 0, option: "Javascript" });
-votation1.addVotationOption({ votes: 0, option: "Typescript" });
-votation1.addVotationOption({ votes: 0, option: "GoLang" });
-votation1.addVotationOption({ votes: 0, option: "Java" });
-votation1.addVotationOption({ votes: 0, option: "C" });
-votation1.addVotationOption({ votes: 0, option: "C++" });
-votation1.addVotationOption({ votes: 0, option: "C#" });
+const voting1 = new Voting("What is your favorite programming language? ");
+voting1.addVotingOption({ votes: 0, option: "Python" });
+voting1.addVotingOption({ votes: 0, option: "Javascript" });
+voting1.addVotingOption({ votes: 0, option: "Typescript" });
+voting1.addVotingOption({ votes: 0, option: "GoLang" });
+voting1.addVotingOption({ votes: 0, option: "Java" });
+voting1.addVotingOption({ votes: 0, option: "C" });
+voting1.addVotingOption({ votes: 0, option: "C++" });
+voting1.addVotingOption({ votes: 0, option: "C#" });
 
-votation1.vote(1);
-votation1.vote(1);
-votation1.vote(1);
-votation1.vote(2);
-votation1.vote(0);
-votation1.vote(0);
+voting1.vote(1);
+voting1.vote(1);
+voting1.vote(1);
+voting1.vote(2);
+voting1.vote(0);
+voting1.vote(0);
 
-const votation2 = new Votation("What is your favorite color? ");
-votation2.addVotationOption({votes: 0 , option:'Red'})
-votation2.addVotationOption({votes: 0 , option:'Green'})
-votation2.addVotationOption({votes: 0 , option:'Blue'})
-votation2.addVotationOption({votes: 0 , option:'Brown'})
+const voting2 = new Voting("What is your favorite color? ");
+voting2.addVotingOption({votes: 0 , option:'Red'})
+voting2.addVotingOption({votes: 0 , option:'Green'})
+voting2.addVotingOption({votes: 0 , option:'Blue'})
+voting2.addVotingOption({votes: 0 , option:'Brown'})
 
-votation2.vote(1)
-votation2.vote(2)
-votation2.vote(0)
-votation2.vote(1)
-votation2.vote(3)
+voting2.vote(1)
+voting2.vote(2)
+voting2.vote(0)
+voting2.vote(1)
+voting2.vote(3)
 
-const votationApp = new VotationApp();
-votationApp.addVotation(votation1);
-votationApp.addVotation(votation2);
+const votingApp = new VotingApp();
+votingApp.addVotingSection(voting1);
+votingApp.addVotingSection(voting2);
 
-votationApp.showVotations();
+votingApp.showVotingSessions();
