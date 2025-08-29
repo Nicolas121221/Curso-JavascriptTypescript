@@ -30,9 +30,11 @@ describe("Objects", () => {
 		const anotherPerson = { ...person };
 
 		expect(person).toEqual(anotherPerson);
-        expect(person).toHaveProperty("age");
-        expect(person).toHaveProperty("age", 18);
+		expect(person).toHaveProperty("age");
+		expect(person).toHaveProperty("age", 18);
 
-        expect(person.name).toBe('Nícolas')
+		expect(person.name).toBe("Nícolas");
 	});
 });
+
+
