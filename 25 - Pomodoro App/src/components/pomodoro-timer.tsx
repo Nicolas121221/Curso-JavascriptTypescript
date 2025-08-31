@@ -1,10 +1,11 @@
-import { useEffect, useState, type JSX } from "react";
+import { useCallback, useEffect, useState, type JSX } from "react";
 import { useInterval } from "../hooks/use-interval";
 import { Button } from "./button";
 import { Timer } from "./timer";
+import { secondsToTime } from "../utils/seconds-to-time";
 
-import bellStart from './bell-start.mp3'
-import bellFinish from './bell-finish.mp3'
+import bellStart from "../assets/bell-start.mp3";
+import bellFinish from "../assets/bell-finish.mp3";
 
 const audioStartWorking = new Audio(bellStart);
 const audioStopWorking = new Audio(bellFinish);
@@ -21,44 +22,79 @@ export function PomodoroTimer(props: Props): JSX.Element {
   const [timeCounting, setTimeCounting] = useState(false);
   const [working, setWorking] = useState(false);
   const [resting, setResting] = useState(false);
+  const [cycleQtdManager, setCycleQtdManager] = useState(
+    new Array(props.cycles - 1).fill(true)
+  );
 
-  useEffect(() => {
-    if (working) document.body.classList.add("working");
-    if (working) document.body.classList.remove("working");
-  }, [working]);
+  const [completedCycles, setCompletedCycles] = useState(0);
+  const [fullWorkingTime, setFullWorkingTime] = useState(0);
+  const [numberOfPomodoros, setNumberOfPomodoros] = useState(0);
 
   useInterval(
     () => {
       setMainTime(mainTime - 1);
+      if (working) setFullWorkingTime(fullWorkingTime + 1);
     },
     timeCounting ? 1000 : null
   );
 
-  const configureWork = () => {
+  const configureWork = useCallback(() => {
     setTimeCounting(true);
     setWorking(true);
     setResting(false);
     setMainTime(props.pomodoroTime);
     audioStartWorking.play();
-  };
+  }, [props.pomodoroTime]);
 
-  const configureRest = (long: boolean) => {
-    setTimeCounting(true);
-    setWorking(false);
-    setResting(true);
+  const configureRest = useCallback(
+    (long: boolean) => {
+      setTimeCounting(true);
+      setWorking(false);
+      setResting(true);
 
-    if (long) {
-      setMainTime(props.longRestTime);
-    } else {
-      setMainTime(props.shortRestTime);
+      if (long) {
+        setMainTime(props.longRestTime);
+      } else {
+        setMainTime(props.shortRestTime);
+      }
+      audioStopWorking.play();
+    },
+    [props.longRestTime, props.shortRestTime]
+  );
+
+  useEffect(() => {
+    if (working) document.body.classList.add("working");
+    if (resting) document.body.classList.remove("working");
+
+    if (mainTime > 0) return;
+
+    if (working && cycleQtdManager.length > 0) {
+      configureRest(false);
+      cycleQtdManager.pop();
+    } else if (working && cycleQtdManager.length <= 0) {
+      configureRest(true);
+      setCycleQtdManager(new Array(props.cycles - 1).fill(true));
+      setCompletedCycles(completedCycles + 1);
     }
 
-    audioStopWorking.play();
-  };
+    if (working) setNumberOfPomodoros(numberOfPomodoros + 1);
+    if (resting) configureWork();
+  }, [
+    working,
+    resting,
+    mainTime,
+    cycleQtdManager,
+    configureRest,
+    setCycleQtdManager,
+    completedCycles,
+    configureWork,
+    numberOfPomodoros,
+    props.cycles,
+  ]);
 
   return (
     <div className="pomodoro">
-      <h2>You are: working</h2>
+      <h2>You are: {working ? "working" : "resting"}</h2>
 
       <Timer mainTime={mainTime} />
       <div className="controls">
@@ -71,12 +107,9 @@ export function PomodoroTimer(props: Props): JSX.Element {
         ></Button>
       </div>
       <div className="details">
-        <p>Testando: aslkdfjçlaksdjflçkasjdf</p>
-        <p>Testando: aslkdfjçlaksdjflçkasjdf</p>
-        <p>Testando: aslkdfjçlaksdjflçkasjdf</p>
-        <p>Testando: aslkdfjçlaksdjflçkasjdf</p>
-        <p>Testando: aslkdfjçlaksdjflçkasjdf</p>
-        <p>Testando: aslkdfjçlaksdjflçkasjdf</p>
+        <p>Completed cycles: {completedCycles}</p>
+        <p>Working time: {secondsToTime(fullWorkingTime)}</p>
+        <p>Finished pomodoros: {numberOfPomodoros}</p>
       </div>
     </div>
   );

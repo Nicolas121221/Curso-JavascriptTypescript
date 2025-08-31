@@ -7,9 +7,9 @@
 
 :root {
     --color-primary: #2cb595;
-    --color-primary-dark: #173630;
+    --color-primary-darker: #2c7164;
     --color-working: #EF5D50;
-    --color-working-dark: #341819;
+    --color-working-darker: #812329;
     --color-white: #ffffff;
     --color-text-shadow: #00000080;
     --color-black: #000000
@@ -17,7 +17,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-primary-darker);
     transition: background-color 300ms ease-in-out;
     line-height: 1.5;
 }
@@ -28,7 +28,7 @@ body {
 }
 
 .working {
-    background: var(--color-working-dark);
+    background: var(--color-working-darker);
 }
 
 .hidden {
@@ -40,7 +40,7 @@ body {
     margin: 50px 20px;
     padding: 20px;
     border-radius: 4px;
-    box-shadow: 0 0 10px var(--color-text-shadow);
+    box-shadow: 0 0 30px var(--color-text-shadow);
 }
 
 .pomodoro h2 {
@@ -49,6 +49,7 @@ body {
 }
 
 .pomodoro .timer {
+    user-select: none;
     font-size: 6rem;
     text-align: center;
 }
