@@ -1,5 +1,5 @@
-import { DiscountStrategy } from "./discount-strategy.ts";
-import type { ECommerceShoppingCart } from "./ecommerce-shopping-cart.ts";
+import { DiscountStrategy } from "./discount-strategy";
+import type { ECommerceShoppingCart } from "./ecommerce-shopping-cart";
 
 export class DefaultDiscount extends DiscountStrategy {
 	protected discount = 0;

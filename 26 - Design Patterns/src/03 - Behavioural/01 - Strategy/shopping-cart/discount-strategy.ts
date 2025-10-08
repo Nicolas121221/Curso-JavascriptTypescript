@@ -1,4 +1,4 @@
-import type { ECommerceShoppingCart } from "./ecommerce-shopping-cart.ts";
+import type { ECommerceShoppingCart } from "./ecommerce-shopping-cart";
 
 export class DiscountStrategy {
 	protected discount = 0;

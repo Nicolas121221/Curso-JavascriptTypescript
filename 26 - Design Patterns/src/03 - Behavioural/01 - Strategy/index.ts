@@ -1,6 +1,6 @@
-import { DefaultDiscount } from "./shopping-cart/default-discount.ts";
-import { ECommerceShoppingCart } from "./shopping-cart/ecommerce-shopping-cart.ts";
-import { NewDiscount } from "./shopping-cart/new-discount.ts";
+import { DefaultDiscount } from "./shopping-cart/default-discount";
+import { ECommerceShoppingCart } from "./shopping-cart/ecommerce-shopping-cart";
+import { NewDiscount } from "./shopping-cart/new-discount";
 
 const shoppingCart = new ECommerceShoppingCart();
 shoppingCart.discount = new NewDiscount();

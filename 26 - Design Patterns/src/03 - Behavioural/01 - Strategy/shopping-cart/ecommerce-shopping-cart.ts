@@ -1,5 +1,5 @@
-import { DiscountStrategy } from "./discount-strategy.ts";
-import type { ECommerceProductProtocol } from "./ecommerce-product-protocol.ts";
+import { DiscountStrategy } from "./discount-strategy";
+import type { ECommerceProductProtocol } from "./ecommerce-product-protocol";
 
 export class ECommerceShoppingCart {
 	private products: ECommerceProductProtocol[] = [];
