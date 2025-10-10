@@ -14,8 +14,6 @@ async function run() {
 	const customerDataParserJson = new CustomerDataParserJson(filePathJson);
 	await customerDataParserJson.fixCustomerData();
 	console.log(customerDataParserJson.customerData);
-
-	console.log();
 }
 
 run();
