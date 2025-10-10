@@ -2,7 +2,7 @@ import type { MyDataStructure } from "./my-data-structure.ts";
 import type { MyIteratorProtocol } from "./my-iterator-protocol.ts";
 
 export class MyDefaultIterator implements MyIteratorProtocol<string> {
-	private index = this.dataStructure.size();
+	private index = 0;
 
 	constructor(private readonly dataStructure: MyDataStructure) {}
 
