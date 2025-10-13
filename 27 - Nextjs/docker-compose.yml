@@ -4,11 +4,9 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=nextjsdb
+      - POSTGRES_DB=postgres
     volumes:
       - db_data:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
 
 volumes:
   db_data:
