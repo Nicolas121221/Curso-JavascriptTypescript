@@ -1,11 +1,16 @@
+import HomePage from "@/containers/HomePage";
+import { getAllPosts } from "@/data/posts/get-all-posts";
+import { PostData } from "@/domain/posts/post";
 import { JSX } from "react";
 
-const index = (): JSX.Element => {
+const Index = async (): Promise<JSX.Element> => {
+  const posts: PostData[] = await getAllPosts();
+
   return (
-    <div>
-      <h1>hellow next js </h1>
-    </div>
+    <main>
+      <HomePage posts={posts}/>
+    </main>
   );
 };
 
-export default index;
+export default Index;
