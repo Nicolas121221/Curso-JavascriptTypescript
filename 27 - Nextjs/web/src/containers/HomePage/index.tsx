@@ -1,4 +1,4 @@
-import { Header } from "@/components/Header";
+import { PostCard } from "@/components/PostCard";
 import { PostData } from "@/domain/posts/post";
 import { JSX } from "react";
 
@@ -9,10 +9,14 @@ export type HomeProps = {
 const HomePage = ({ posts }: HomeProps): JSX.Element => {
   return (
     <>
-      <Header />
-      <section>
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
         {posts.map((post) => (
-          <h2 key={post.slug}>{post.title}</h2>
+          <PostCard
+            key={post.title}
+            slug={post.slug}
+            title={post.title}
+            cover={post.cover.formats.small.url}
+          />
         ))}
       </section>
     </>

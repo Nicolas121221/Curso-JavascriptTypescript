@@ -1,3 +1,5 @@
+import { Header } from "@/components/Header";
+import { MainContainer } from "@/components/MainContainer";
 import HomePage from "@/containers/HomePage";
 import { getAllPosts } from "@/data/posts/get-all-posts";
 import { PostData } from "@/domain/posts/post";
@@ -8,7 +10,10 @@ const Index = async (): Promise<JSX.Element> => {
 
   return (
     <main>
-      <HomePage posts={posts}/>
+      <Header />
+      <MainContainer>
+        <HomePage posts={posts} />
+      </MainContainer>
     </main>
   );
 };
