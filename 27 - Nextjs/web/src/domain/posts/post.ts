@@ -74,5 +74,5 @@ export type PostData = {
 };
 
 export type ApiResponse = {
-  data: PostData[]
-}
+  data: PostData[];
+};

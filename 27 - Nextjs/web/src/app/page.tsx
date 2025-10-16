@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MainContainer } from "@/components/MainContainer";
 import HomePage from "@/containers/HomePage";
@@ -6,7 +7,7 @@ import { PostData } from "@/domain/posts/post";
 import { JSX } from "react";
 
 const Index = async (): Promise<JSX.Element> => {
-  const posts: PostData[] = await getAllPosts();
+  const posts: PostData[] = await getAllPosts("populate=cover&sort=id:desc");
 
   return (
     <main>
@@ -14,6 +15,7 @@ const Index = async (): Promise<JSX.Element> => {
       <MainContainer>
         <HomePage posts={posts} />
       </MainContainer>
+      <Footer />
     </main>
   );
 };
