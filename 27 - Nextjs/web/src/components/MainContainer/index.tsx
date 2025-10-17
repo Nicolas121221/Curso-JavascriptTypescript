@@ -5,5 +5,5 @@ export type MainContainerProps = {
 };
 
 export const MainContainer = ({ children }: MainContainerProps): JSX.Element => {
-  return <section className="max-w-3xl mx-auto px-4 mt-4">{children}</section>;
+  return <section className="max-w-3xl mx-auto px-4 mt-4 min-h-[85vh]">{children}</section>;
 };

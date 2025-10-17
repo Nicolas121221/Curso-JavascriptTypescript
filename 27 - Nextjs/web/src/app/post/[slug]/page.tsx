@@ -1,15 +1,16 @@
+import { Post } from "@/containers/post";
 import { getPost } from "@/data/posts/get-post";
 import { JSX } from "react";
 
-const Post = async ({ params }: { params: Promise<{ slug: string }> }): Promise<JSX.Element> => {
+const DynamicPost = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<JSX.Element> => {
   const { slug } = await params;
-  const posts = await getPost(slug, "populate=cover");
+  const post = await getPost(slug, "populate=*");
 
-  return (
-    <div>
-      {posts[0].title}
-    </div>
-  );
+  return <Post post={post} />;
 };
 
-export default Post;
+export default DynamicPost;

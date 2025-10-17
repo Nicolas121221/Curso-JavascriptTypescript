@@ -1,0 +1,22 @@
+@reference "tailwindcss";
+
+.post-container h1{
+  @apply font-bold text-blue-400 text-xl
+}
+
+.post-container h2 {
+  @apply italic text-lg;
+}
+
+.post-container p {
+  @apply m-4;
+}
+
+.post-container ol,
+.post-container ol {
+  @apply m-4;
+}
+
+.post-container pre{
+  @apply bg-gray-800 p-5 w-full overflow-x-auto text-base/normal mx-10
+}
