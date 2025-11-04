@@ -1,0 +1,3 @@
+-- Delete
+DELETE FROM users WHERE id = 38;
+SELECT * FROM users WHERE id BETWEEN 20 AND 40;
